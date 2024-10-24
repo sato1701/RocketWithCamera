@@ -32,9 +32,16 @@ telemetry.pyの表示内容をグラフ化するプログラムです。加速�
 
 ## 使い方
 
-send_video.shを起動し、動画転送用のサーバを建てます。任意のビデオプレーヤーからこれにアクセスします。（例：tcp://raspberrypi2.local:55554）
+send_video.shを起動し、動画転送用のサーバを建てます。任意のビデオプレーヤーからこれにアクセスします。
+
+例： `tcp://raspberrypi2.local:55554`
 
 加えて、receiver.py、telemetry.pyの順で起動します。データ転送にはncコマンドを使用します。
 
 PC側： `yourPC:~$ nc -l 63100 | python receiver.py`
+
 ラスパイ側： `pi@raspberrypi:~$ python telemetry.py | nc 192.168.12.1 63100`
+
+イメージ画像：
+
+![image](https://github.com/sato1701/RocketWithCamera/blob/main/2024-10-17-085317_1920x1080_scrot_mozaiku.png)
